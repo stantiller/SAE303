@@ -70,10 +70,10 @@ function afficher(){
     document.querySelector('.gender').style.setProperty('--angle', angleMale+'deg');
     document.querySelector('.legende').innerHTML += `\
         <div class="homme">\
-            <div></div> = Homme (${pourcentMale}%)\
+            <div></div> = Hommes (${pourcentMale}%)\
         </div>\
         <div class="femme">\
-            <div></div> = Femme (${pourcentFemale}%)\
+            <div></div> = Femmes (${pourcentFemale}%)\
         </div>\
     `;
 

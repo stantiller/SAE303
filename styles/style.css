@@ -177,6 +177,7 @@ rect
 }
 .gender
 {
+    --angle: 0deg;
     height: 180px;
     width: 180px;
     min-width: 180px;
