@@ -212,6 +212,13 @@ span
 {
     font-weight: bold;
 }
+#tooltip
+{
+    background: #2B0F2F;
+    border: 2px solid #7630D9;
+    border-radius: 5px;
+    padding: 5px;
+}
 
 @media screen and (max-width: 1200px) {
     .graph1

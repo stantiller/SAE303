@@ -138,6 +138,19 @@ function afficher(){
     compteId = 0;
     compteIdStyle = 0;
 
+    function showTooltip(evt, text) {
+        let tooltip = document.getElementById("tooltip");
+        tooltip.innerHTML = text;
+        tooltip.style.display = "block";
+        tooltip.style.left = evt.pageX + 10 + 'px';
+        tooltip.style.top = evt.pageY + 10 + 'px';
+    }
+    
+    function hideTooltip() {
+      var tooltip = document.getElementById("tooltip");
+      tooltip.style.display = "none";
+    }
+
     document.querySelector('.reasonText').innerHTML = 'Les répondants au sondage joue aux jeux pour ces raisons :'
     for (const element in compte) { 
         console.log(`  ${element}: ${compte[element]} times`);
@@ -162,11 +175,14 @@ function afficher(){
         const rect = document.querySelector(`#age${compteId}`);
 
         // Use a timeout to ensure the transition works
-        setTimeout(() => {
+        setTimeout(() => {    
+
             rect.setAttribute('height', tailleSvg);
             rect.setAttribute('y', 300 - tailleSvg);
+            rect.addEventListener('mouseover', (evt) => showTooltip(evt, compte[element]+' réponses'))
+            rect.addEventListener('mouseout', hideTooltip)
         }, 50);
     }
 }
 
-document.querySelector('.afficher').addEventListener('click', afficher)
+document.querySelector('.afficher').addEventListener('click', afficher)            
